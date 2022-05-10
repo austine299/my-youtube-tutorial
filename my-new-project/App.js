@@ -5,18 +5,21 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function App() {
 
 const [name, setName] = useState ('austine')
+const [person, setPerson] = useState({name: 'austine', age: 30,})
 
+const setHandler = ()=> {
+  setName('imah ugochukwu ')
+  setPerson({name: ugochukwu, age: 40})
+}
   return (
     <View style={styles.container}>
       
-      <View style={styles.header}>
-        <Text style={styles.boldText}>Hello, World!</Text>
-      </View>
       <View style={styles.body}>
         <Text>my name is {name}</Text>
+        <Text>His Name is {person.name} and his age is {person.age}</Text>
       </View>
       <View style = {styles.buttonContainer}>
-        <Button title='Set Name'/>
+        <Button title='Set Name' onPress={setHandler}/>
       </View>
 
     </View>
@@ -30,15 +33,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  header:{
-    backgroundColor: 'pink',
-    padding: 20,
-  },
   boldText:{
     fontWeight: 'bold',
   },
   body:{
-    backgroundColor:'yellow',
     padding:20,
   }, 
   buttonContainer:{
