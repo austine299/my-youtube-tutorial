@@ -1,3 +1,4 @@
+
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
@@ -8,6 +9,7 @@ export default function App() {
 
   const setHandler = ()=> {
     setName('imah ugochukwu ')
+
     setPerson({name: ugochukwu, age: 40})
   }
   return (
@@ -19,7 +21,6 @@ export default function App() {
       <View style = {styles.buttonContainer}>
         <Button title='Set Name' onPress={setHandler}/>
       </View>
-
     </View>
   );
 }
@@ -39,5 +40,6 @@ const styles = StyleSheet.create({
   }, 
   buttonContainer:{
     marginTop:20
+
   }
 });
