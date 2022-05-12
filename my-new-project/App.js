@@ -18,17 +18,18 @@ export default function App() {
         keyboardType='default'
         style ={styles.input} 
         placeholder = "e.g john mike"
-        onChangeText={(val) => setName(val)}/>
+        onChangeText={(val) => setName(val)}
+      />
 
       <text>Enter your name here</text>
       <TextInput 
         keyboardType='numeric'
         style ={styles.input} 
         placeholder = "e.g john mike"
-        onChangeText={(val) => setName(val)}/>
+        onChangeText={(val) => setName(val)}
+      />
 
       <Text>name: {name}, age: {age}</Text>
-      
     </View>
   );
 }
