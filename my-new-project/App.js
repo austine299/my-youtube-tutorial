@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
 
 export default function App() {
   const [name, setName] = useState ('austine')
@@ -8,18 +8,18 @@ export default function App() {
 
   const setHandler = ()=> {
     setName('imah ugochukwu ')
-    setPerson({name: ugochukwu, age: 40})
+    setPerson({name: 'ugochukwu', age: 40})
   }
   return (
     <View style={styles.container}>
-      <View style={styles.body}>
-        <Text>my name is {name}</Text>
-        <Text>His Name is {person.name} and his age is {person.age}</Text>
-      </View>
-      <View style = {styles.buttonContainer}>
-        <Button title='Set Name' onPress={setHandler}/>
-      </View>
+      
+      <text>Enter your name here</text>
+      <TextInput 
+        style ={styles.input} 
+        placeholder = "name here"/>
 
+      <Text>name: {name}, age: {age}</Text>
+      
     </View>
   );
 }
@@ -39,5 +39,12 @@ const styles = StyleSheet.create({
   }, 
   buttonContainer:{
     marginTop:20
+  },
+  input:{
+    borderWidth: 1,
+    borderColor:'#777',
+    padding: 8,
+    margin: 10,
+    width: 200,
   }
 });
