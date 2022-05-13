@@ -1,5 +1,9 @@
+
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
+
+
+
 
 export default function App() {
   const [name, setName] = useState ('austine')
@@ -30,6 +34,7 @@ export default function App() {
       />
 
       <Text>name: {name}, age: {age}</Text>
+
     </View>
   );
 }
