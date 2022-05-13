@@ -2,17 +2,18 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
 
-
-
-
 export default function App() {
   const [name, setName] = useState ('austine')
-  const [person, setPerson] = useState({name: 'austine', age: 30,})
+  const [age, setAge] = useState ('40')
+  const [people, setPeople] = useState([
+    {key: 1, name: 'ugochukwu', age: 26},
+    {key: 2, name: 'austine', age: 30},
+    {key: 3, name: 'emeka', age: 40},
+    {key: 4, name: 'izuchukwu', age: 45},
+  ])
 
-  const setHandler = ()=> {
-    setName('imah ugochukwu ')
-    setPerson({name: 'ugochukwu', age: 40})
-  }
+  
+
   return (
     <View style={styles.container}>
       
@@ -25,17 +26,29 @@ export default function App() {
         onChangeText={(val) => setName(val)}
       />
 
-      <text>Enter your name here</text>
+      <text>Enter your age here</text>
       <TextInput 
         keyboardType='numeric'
         style ={styles.input} 
-        placeholder = "e.g john mike"
-        onChangeText={(val) => setName(val)}
+        placeholder = "e.g 99"
+        onChangeText={(val) => setAge(val)}
+
       />
 
       <Text>name: {name}, age: {age}</Text>
 
+      
+      <View style={styles.listContainer}>
+        {people.map((item) => {
+          return(
+            <View key={item.key}>
+              <Text style={styles.item}>{item.name} { item.age}</Text>
+            </View>
+          )
+        })}
+      </View>
     </View>
+    
   );
 }
 
@@ -61,5 +74,17 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 10,
     width: 200,
+  },
+  listContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    padding:40,
+    paddingHorizontal: 20,
+  },
+  item:{
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: 'pink',
+    fontSize: 24,
   }
 });
